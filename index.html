@@ -19,19 +19,19 @@
 		<div id="MYSQL">
 		<?php
 			$servername = "localhost";
-			$username = "root";
+			$login = "root";
 			$password = "root";
-			$dbname = "myDB";
+			$dbname = "MyGuests";
 
 			// Create connection
-			$conn = mysqli_connect($servername, $username, $password, $dbname);
+			$conn = mysqli_connect($servername, $login, $password, $dbname);
 			// Check connection
 			if (!$conn) {
   				die("Connection failed: " . mysqli_connect_error());
 			}
 
-			$sql = "INSERT INTO MyGuests (firstname, lastname, email)
-			VALUES ('John', 'Doe', 'john@example.com')";
+			$sql = "INSERT INTO MyGuests (username, email)
+			VALUES ('John', 'john@example.com')";
 
 			if (mysqli_query($conn, $sql)) {
    			 echo "New record created successfully";
