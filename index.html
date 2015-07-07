@@ -15,33 +15,7 @@
 			<p>E-mail Address:	
 				<input type="text" name="email"/>
 				<input type="submit" name="submit" value="Done" />
-			</form>	
-		<div id="MYSQL">
-		<?php
-			$servername = "localhost";
-			$login = "root";
-			$password = "";
-			$dbname = "MyGuests";
-
-			// Create connection
-			$conn = mysqli_connect($servername, $login, $password, $dbname);
-			// Check connection
-			if (!$conn) {
-  				die("Connection failed: " . mysqli_connect_error());
-			}
-
-			$sql = "INSERT INTO MyGuests (username, email)
-			VALUES ('John', 'john@example.com')";
-
-			if (mysqli_query($conn, $sql)) {
-   			 echo "New record created successfully";
-			} else {
-   			 echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-			}
-
-mysqli_close($conn);
-?>
-		</div>	
+			</form>
 		</div>
 		<script src="Javascript/test-function.js"></script>
 	</body>
