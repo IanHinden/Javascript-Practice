@@ -5,12 +5,27 @@ function updateMessage() {
 }
 updateMessage();
 
-var msg2 = '<h2>browser window</h2><p>width: ' + window.innerWidth + '</p>';
-msg2 += '<p>height: ' + window.innerHeight + '</p>';
-msg2 += '<h2>history</h2><p>items: ' + window.history.length + '</p>';
-msg2 += '<h2>screen</h2><p>width: ' + window.screen.width + '</p>';
-msg2 += '<p>height: ' + window.screen.height + '</p>';
+var expiryMsg;
+var today;
+var elEnds;
 
-var el2 = document.getElementById('info');
-el2.innerHTML = msg2;
-alert('Current page: ' + window.location);
+function offerExpires(today) {
+	var weekFromToday, day, date, month, year, dayNames, monthNamesl
+	weekFromToday = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
+	
+	dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+	monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+	
+	day = dayNames[weekFromToday.getDay()];
+	date = weekFromToday.getDate();
+	month = monthNames[weekFromToday.getMonth()];
+	year = weekFromToday.getFullYear();
+	
+	expiryMsg = 'Offer expires next ';
+	expiryMsg += day + ' <br />(' + date + ' ' + month + ' ' + year + ')';
+	return expiryMsg;
+}
+
+today = new Date();
+elEnds = document.getElementById('offerEnds');
+elEnds.innerHTML = offerExpires(today);

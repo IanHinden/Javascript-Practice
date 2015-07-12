@@ -3,9 +3,9 @@ h1 {
 	text-align: center;
 }
 
-div#fixedfooter {
+div#fixedheader {
 	position: fixed;
-	bottom: 0px;
+	top: 0px;
 	left: 0px;
 	width: 100%;
 	color: #CCC;
