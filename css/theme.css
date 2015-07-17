@@ -16,3 +16,11 @@ div#fixedheader {
 ul {
 	color: orange;
 }
+
+.hot {
+	color: blue;
+}
+
+.cool {
+	color: yellow;
+}

@@ -29,3 +29,14 @@ function offerExpires(today) {
 today = new Date();
 elEnds = document.getElementById('offerEnds');
 elEnds.innerHTML = offerExpires(today);
+
+var elTest = document.querySelector('li.hot');
+elTest.className = 'cool';
+
+var hotItems = document.querySelectorAll('li.hot');
+
+if (hotItems.length > 0) {
+	for (var i = 0; i<hotItems.length; i++) {
+		hotItems[i].className = 'cool';
+	}
+}
