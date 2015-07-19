@@ -40,3 +40,5 @@ if (hotItems.length > 0) {
 		hotItems[i].className = 'cool';
 	}
 }
+
+document.getElementById('one').className('yeah');
